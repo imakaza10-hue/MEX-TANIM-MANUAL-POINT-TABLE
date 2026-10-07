@@ -1,148 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEX TANIM Manual Point Table</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<title>MEX TANIM FF POINT TABLE</title>
 
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background: #101522;
-            color: white;
-        }
+<style>
+*{
+    box-sizing:border-box;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+body{
+    margin:0;
+    padding:15px;
+    font-family:Arial,sans-serif;
+    background:#07111f;
+    color:white;
+}
 
-        h1 {
-            text-align: center;
-            margin-bottom: 8px;
-        }
+.container{
+    max-width:1100px;
+    margin:auto;
+}
 
-        .subtitle {
-            text-align: center;
-            color: #aab3c5;
-            margin-bottom: 25px;
-        }
+h1{
+    text-align:center;
+    margin:10px 0 5px;
+}
 
-        .table-box {
-            overflow-x: auto;
-            background: #182033;
-            border-radius: 12px;
-            padding: 10px;
-        }
+.subtitle{
+    text-align:center;
+    color:#9caac0;
+    margin-bottom:20px;
+}
 
-        table {
-            width: 100%;
-            min-width: 750px;
-            border-collapse: collapse;
-        }
+.table-box{
+    overflow-x:auto;
+    background:#111d30;
+    padding:10px;
+    border-radius:12px;
+}
 
-        th {
-            background: #2478ff;
-            padding: 12px 8px;
-        }
+table{
+    width:100%;
+    min-width:750px;
+    border-collapse:collapse;
+}
 
-        td {
-            padding: 8px;
-            text-align: center;
-            border-bottom: 1px solid #30394d;
-        }
+th{
+    background:#1877f2;
+    padding:12px 8px;
+}
 
-        input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #3b465d;
-            border-radius: 6px;
-            background: #0f1522;
-            color: white;
-            text-align: center;
-        }
+td{
+    padding:7px;
+    text-align:center;
+    border-bottom:1px solid #29384e;
+}
 
-        .team {
-            min-width: 180px;
-            text-align: left;
-        }
+input{
+    width:100%;
+    min-height:42px;
+    border:1px solid #40506a;
+    border-radius:7px;
+    background:#091322;
+    color:white;
+    padding:8px;
+    text-align:center;
+    font-size:15px;
+}
 
-        .total {
-            font-weight: bold;
-            font-size: 18px;
-        }
+.team{
+    min-width:170px;
+    text-align:left;
+}
 
-        button {
-            border: 0;
-            border-radius: 8px;
-            padding: 12px 18px;
-            margin: 15px 5px 5px;
-            color: white;
-            background: #2478ff;
-            font-size: 15px;
-            cursor: pointer;
-        }
+button{
+    border:0;
+    border-radius:8px;
+    padding:13px 20px;
+    margin:15px 5px 5px;
+    color:white;
+    background:#1877f2;
+    font-size:16px;
+    font-weight:bold;
+}
 
-        button:hover {
-            opacity: 0.9;
-        }
+.reset{
+    background:#d83232;
+}
 
-        .danger {
-            background: #e53935;
-        }
+#status{
+    text-align:center;
+    margin:15px 0;
+    color:#8fc7ff;
+}
 
-        .result {
-            margin-top: 25px;
-            background: #182033;
-            padding: 15px;
-            border-radius: 12px;
-        }
+.results{
+    margin-top:25px;
+}
 
-        .result h2 {
-            margin-top: 0;
-        }
-    </style>
+.preview{
+    margin-top:20px;
+    background:#111d30;
+    padding:10px;
+    border-radius:12px;
+}
+
+.preview h2{
+    margin-top:5px;
+}
+
+.preview img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:8px;
+}
+
+.download{
+    display:block;
+    text-align:center;
+    background:#1877f2;
+    color:white;
+    text-decoration:none;
+    padding:13px;
+    margin-top:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1>🔥 MEX TANIM MANUAL POINT TABLE</h1>
-    <div class="subtitle">Free Fire Tournament Point Calculator</div>
+<h1>🔥 MEX TANIM FF POINT TABLE</h1>
 
-    <div class="table-box">
+<div class="subtitle">
+Free Fire Tournament Point Calculator
+</div>
 
-        <table id="pointTable">
+<div class="table-box">
 
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Team Name</th>
-                    <th>Booyah</th>
-                    <th>Kill</th>
-                    <th>Position</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
+<table>
 
-            <tbody id="tableBody"></tbody>
+<thead>
+<tr>
+    <th>Rank</th>
+    <th>Team Name</th>
+    <th>Booyah</th>
+    <th>Kill</th>
+    <th>Position</th>
+    <th>Total</th>
+</tr>
+</thead>
 
-        </table>
+<tbody id="tableBody"></tbody>
 
-    </div>
+</table>
 
-    <div style="text-align:center;">
-        <button onclick="calculate()">Calculate Point Table</button>
-        <button class="danger" onclick="resetTable()">Reset</button>
-    </div>
+</div>
 
-    <div class="result">
-        <h2>📊 Result</h2>
-        <div id="resultText">Enter team information above
+<div style="text-align:center;">
+
+<button onclick="calculate()">
+Calculate & Generate Point Table
+</button>
+
+<button class="reset" onclick="resetTable()">
+Reset
+</button>
+
+</div>
+
+<div id="status"></div>
+
+<div class="results" id="results"></div>
+
+</div>
+
+
+<script>
+
+const positionPoints = {
+    1:12,
+    2:9,
+    3:8,
+    4:7,
+    5:6,
+    6:5,
+    7:4,
+    8:3,
+    9:2,
+    10:1,
+    11:0,
+    12:0
+};
+
+
+function createRows(){
+
+    const tbody =
+        document.getElementById("tableBody");
+
+    tbody.innerHTML = "";
+
+    for(let i=1;i<=12;i++){
+
+        const row =
+            document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${i}</td>
+
+            <td>
+                <input
+                    class="team"
+                    id="team${i}"
+                    placeholder="Team ${i}">
+            </td>
+
+            <td>
+                <input
+                    type="number"
+                    id="booyah${i}"
+                    min="0"
+                    max="1"
+                    value="0">
+            </td>
+
+            <td>
+                <input
+                    type="number"
+                    id="kill${i}"
+                    min="0"
+                    value="0">
+            </td>
+
+            <td>
+                <input
+                    type="number"
+                    id="position${i}"
+                    min="1"
+                    max="12"
+                    value="${i}">
+            </td>
+
+            <td
+                class="total"
+                id="total${i}">
+                0
+            </td>
+        `;
+
+        tbody.appendChild(row);
+    }
+}
+
+
+async function calculate(){
+
+    const status =
+        document.getElementById("status");
+
+    status.innerText =
+        "⏳ Generating point table...";
+
+    const rows = [];
+
+    for(let i=1;i<=12;i++){
+
+        const team =
+            document.getElementById(
+                "team"+i
+            ).value.trim();
+
+        const booyah =
+            Number(
+                document.getElementById(
+                    "booyah"+i
+                ).value
+            ) || 0;
+
+        const kill =
+            Number(
+                document.getElementById(
+                    "kill"+i
+                ).value
+            ) || 0;
+
+        const position =
+            Number(
+                document.getElementById(
+                    "position"+i
+                ).value
+            ) || 0;
+
+        const positionPoint =
+            positionPoints[position] || 0;
+
+        const total =
+            kill +
+            positionPoint +
+            (booyah > 0 ? 1 : 0);
+
+        document.getElementById(
+            "total"+i
+        ).innerText = total;
+
+        rows.push({
+            team: team || "Team "+i,
+            booyah: booyah > 0 ? 1 : 0,
+            kill: Math.max(0,kill),
+            position: position,
+            total: total
+        });
+    }
+
+
+    try{
+
+        const response =
+            await fetch("/api/render",{
+
+                method:"POST",
+
+                headers:{
+                    "Content-Type":
+                    "application/json"
+                },
+
+                body:JSON.stringify({
+                    rows:rows
+                })
+
+            });
+
+
+        if(!response.ok){
+            throw new Error(
+                "Server error"
+            );
+        }
+
+
+        const data =
+            await response.json();
+
+
+        showResults(data);
+
+        status.innerText =
+            "✅ Point table generated successfully!";
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        status.innerText =
+            "❌ Error: "+error.message;
+
+    }
+}
+
+
+function showResults(data){
+
+    const results =
+        document.getElementById(
+            "results"
+        );
+
+
+    let html = `
+
+        <div class="preview">
+
+            <h2>
+                🏆 Premium Point Table 1
+            </h2>
+
+            <img
+                src="${data.premium1}"
+                alt="Premium Point Table 1">
+
+            <a
+                class="download"
+                href="${data.premium1}"
+                target="_blank"
+                download>
+                ⬇️ Open / Save Premium 1
+            </a>
+
+        </div>
+
+
+        <div class="preview">
+
+            <h2>
+                🏆 Premium Point Table 2
+            </h2>
+
+            <img
+                src="${data.premium2}"
+                alt="Premium Point Table 2">
+
+            <a
+                class="download"
+                href="${data.premium2}"
+                target="_blank"
+                download>
+                ⬇️ Open / Save Premium 2
+            </a>
+
+        </div>
+
+    `;
+
+
+    results.innerHTML = html;
+}
+
+
+function resetTable(){
+
+    createRows();
+
+    document.getElementById(
+        "results"
+    ).innerHTML = "";
+
+    document.getElementById(
+        "status"
+    ).innerText = "";
+}
+
+
+createRows();
+
+</script>
+
+</body>
+</html>
