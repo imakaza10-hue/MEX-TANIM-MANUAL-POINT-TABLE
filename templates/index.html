@@ -1,12 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEX TANIM Manual Point Table</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #101522;
+            color: white;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aab3c5;
+            margin-bottom: 25px;
+        }
+
+        .table-box {
+            overflow-x: auto;
+            background: #182033;
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 750px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #2478ff;
+            padding: 12px 8px;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #30394d;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #3b465d;
+            border-radius: 6px;
+            background: #0f1522;
+            color: white;
+            text-align: center;
+        }
+
+        .team {
+            min-width: 180px;
+            text-align: left;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        button {
+            border: 0;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin: 15px 5px 5px;
+            color: white;
+            background: #2478ff;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .danger {
+            background: #e53935;
+        }
+
+        .result {
+            margin-top: 25px;
+            background: #182033;
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .result h2 {
+            margin-top: 0;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>MEX TANIM Manual Point Table</h1>
-    <p>Point Table System</p>
-</body>
-</html>
+
+<div class="container">
+
+    <h1>🔥 MEX TANIM MANUAL POINT TABLE</h1>
+    <div class="subtitle">Free Fire Tournament Point Calculator</div>
+
+    <div class="table-box">
+
+        <table id="pointTable">
+
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Team Name</th>
+                    <th>Booyah</th>
+                    <th>Kill</th>
+                    <th>Position</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+
+        </table>
+
+    </div>
+
+    <div style="text-align:center;">
+        <button onclick="calculate()">Calculate Point Table</button>
+        <button class="danger" onclick="resetTable()">Reset</button>
+    </div>
+
+    <div class="result">
+        <h2>📊 Result</h2>
+        <div id="resultText">Enter team information above
